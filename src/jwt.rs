@@ -13,13 +13,13 @@ impl FromRequest for JwToken {
         match req.headers().get("token") {
             Some(data) => {
                 let token = JwToken {
-                    message: data.to_str().unwrap().to_string(),
+                    message: data.to_str().unwrap().to_string()
                 };
                 ok(token)
             }
             None => {
                 let token = JwToken {
-                    message: String::from("nothing found"),
+                    message: String::from("nothing found")
                 };
                 ok(token)
             }
